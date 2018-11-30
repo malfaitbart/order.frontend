@@ -1,0 +1,24 @@
+<div id="itemdetail" *ngIf="(item$ | async) as item else loading">
+  <h1>{{item.name}}</h1>
+  <p>
+    Description: <br>
+    {{item.description}}  
+  </p>
+  <p>
+    <img src="../../../assets/big-smile.png">
+  </p>
+  <p>
+    Price: <br>
+    {{item.price}}
+  </p>
+  <p>
+    Items in stock: <br>
+    {{item.amountOfStock}}
+  </p>
+</div>
+
+<ng-template #loading>
+  Loading...
+</ng-template>
+
+<button (click)="goBack()">go back</button>

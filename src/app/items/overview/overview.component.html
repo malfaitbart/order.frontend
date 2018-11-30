@@ -1,0 +1,20 @@
+<div id="items">
+  <!-- place a for each here -->
+  <div *ngIf="items" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+  <mat-card class="item" *ngFor = "let item of items">
+    <mat-card-header>
+      <mat-card-title>{{item.name}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="../../../assets/big-smile.png" class="item-picture" alt="Photo of {{item.Name}}">
+    <mat-card-content>
+      <p>
+        {{item.description}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      Price: {{item.price}} &nbsp;
+      <a mat-raised-button color="primary" routerLink="/items/{{item.id}}">Details</a>
+    </mat-card-actions>
+  </mat-card>
+  </div>
+</div>
