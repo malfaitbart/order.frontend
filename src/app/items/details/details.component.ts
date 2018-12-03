@@ -18,7 +18,7 @@ export class DetailsComponent implements OnInit {
     private itemsService: ItemsService,
     private route: ActivatedRoute,
     private location: Location
-    ) { }
+  ) { }
 
   ngOnInit() {
     this.getItem();

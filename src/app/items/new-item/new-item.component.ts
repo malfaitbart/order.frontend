@@ -32,7 +32,6 @@ export class NewItemComponent implements OnInit {
   }
 
   add(item: Item): void {
-    if(!item.name) {return;}
     this.itemsService.AddItem(item)
       .subscribe(() => this.router.navigate(['/items']));
   }

@@ -1,5 +1,11 @@
-<h1>Items</h1>
-<a matt-raised-button color="primary" routerLink="/items/new" id="add-item">Add-Item</a>
+<div>
+  <table id="customersHeader">
+    <tr>
+      <td width="90%"><h3>Items</h3></td>
+      <td width="10%"><a mat-raised-button color="primary" routerLink="/Items/new">Add an Item</a></td>
+    </tr>
+  </table>
+</div>
 <div *ngIf="items" id="items">
   <mat-card class="item" *ngFor = "let item of items" id="item">
     <mat-card-header>
