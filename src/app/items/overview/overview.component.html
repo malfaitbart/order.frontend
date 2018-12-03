@@ -1,3 +1,5 @@
+<h1>Items</h1>
+<a matt-raised-button color="primary" routerLink="/items/new" id="add-item">Add-Item</a>
 <div *ngIf="items" id="items">
   <mat-card class="item" *ngFor = "let item of items" id="item">
     <mat-card-header>
