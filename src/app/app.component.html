@@ -1,4 +1,33 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<app-header></app-header>
-<router-outlet></router-outlet>
-<app-right-sidebar></app-right-sidebar>
+<header class="box">
+	<app-header></app-header>
+</header>
+<div class="flex Container">
+    <div class="contentContainer">
+        <div class="mainContainer flex">
+            <main class="box">
+				<router-outlet></router-outlet>
+			</main>
+            <!-- <section class="box">Main Content</section> -->
+        </div>
+    </div>
+    <section class="box sidebar">
+		<app-right-sidebar></app-right-sidebar>
+	</section>
+</div>
+
+<!-- <div gdAreas="header header | side content | footer footer"
+  gdGap="16px"
+  gdRows="auto auto auto"
+  gdAreas.lt-md="header | content | side | footer"
+  gdRows.lt-md="auto auto auto auto"
+  >
+	<div [style.grid-area]="'header'">
+		<app-header></app-header>
+	</div>
+	<div [style.grid-area]="'side'">
+		<app-right-sidebar></app-right-sidebar>
+	</div>
+	<div [style.grid-area]="'content'">
+		<router-outlet></router-outlet>
+	</div>
+</div> -->

@@ -38,6 +38,14 @@ export class ItemsService {
       );
   }
 
+  update(item: Item): Observable<Item> {
+    let url = `${this.apiUrl}/${item.id}`;
+    return this.http.put(url, item, httpOptions).pipe(
+      tap(_ => this.log(`updated item id=${item.id}`)),
+      catchError(this.handleError<any>('update'))
+    );
+  }
+
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error("boe" + error); // log to console instead
@@ -48,7 +56,7 @@ export class ItemsService {
 
   /** Log a HeroService message with the MessageService */
   private log(message: string) {
-    console.log(`HeroService: ${message}`);
+    console.log(`ItemService: ${message}`);
   }
 
 }

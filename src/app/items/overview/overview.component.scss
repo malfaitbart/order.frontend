@@ -1,13 +1,6 @@
 #items {
-	top: 175px;
 	padding: 5px ;
-}
-
-.item {
-	width: 250px;
-}
-
-.mat-card-image {
-	width: 75px;
-	align-content: center;
+	display:grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+	grid-gap: 10px;
 }

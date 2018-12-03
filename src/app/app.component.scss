@@ -1,0 +1,25 @@
+header {
+    height: 150px;
+}
+.box {
+    color: darkred;
+    // background: rgb(233, 233, 233);
+    margin: 5px;
+}
+.mainContainer {
+    height: 26vh;
+}
+.flex {
+    display: flex;
+}
+.contentContainer {
+    flex: 2;
+    max-width: 75%;
+}
+.sidebar {
+    flex: 1;
+    max-width: 25%;
+}
+.flex > main, section {
+    flex: 1;
+}

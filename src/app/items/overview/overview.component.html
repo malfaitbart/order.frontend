@@ -1,7 +1,5 @@
-<div id="items">
-  <!-- place a for each here -->
-  <div *ngIf="items" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
-  <mat-card class="item" *ngFor = "let item of items">
+<div *ngIf="items" id="items">
+  <mat-card class="item" *ngFor = "let item of items" id="item">
     <mat-card-header>
       <mat-card-title>{{item.name}}</mat-card-title>
     </mat-card-header>
@@ -16,5 +14,4 @@
       <a mat-raised-button color="primary" routerLink="/items/{{item.id}}">Details</a>
     </mat-card-actions>
   </mat-card>
-  </div>
 </div>
