@@ -1,0 +1,30 @@
+<div id="customerdetail" *ngIf="(customer$ | async) as customer else loading">
+  <h1>{{customer.firstName}} {{customer.lastName}}</h1>
+
+  <h3>Address</h3>
+  <p>
+    Street: {{customer.address.streetName}}<br />
+    Number: {{customer.address.houseNumber}}<br />
+    PostalCode: {{customer.address.postalCode}}<br />
+    Country: {{customer.address.country}}
+  </p>
+  <h3>Email</h3>
+  <p>
+    localPart: {{customer.email.localPart}}<br />
+    Domain: {{customer.email.domain}}<br />
+    Complete: <a href="mailto:{{customer.email.complete}}">{{customer.email.complete}}</a>
+  </p>
+  <h3>Phone</h3>
+  <p>
+    Phonenumber: {{customer.phoneNumber.number}}<br />
+    Country code: {{customer.phoneNumber.countryCallingCode}}
+  </p>
+  <p><a routerLink="/customers/edit/{{customer.id}}">Edit</a></p>
+
+</div>
+
+<ng-template #loading>
+  Loading...
+</ng-template>
+
+<button (click)="goBack()">go back</button>

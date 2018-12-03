@@ -1,0 +1,53 @@
+<form [formGroup]="newCustomer" (ngSubmit)="onSubmit(newCustomer.value)">
+  <label>
+    First Name:
+    <input type="text" formControlName="firstName">
+  </label>
+
+  <label>
+    Last Name:
+    <input type="text" formControlName="lastName">
+  </label>
+
+  <div formGroupName="email">
+    <label>
+      E-Mail:
+      <input type="text" formControlName="complete">
+    </label>
+  </div>
+
+  <div formGroupName="address">
+    <label>
+      Street name:
+      <input type="text" formControlName="streetName">
+    </label>
+
+    <label>
+      House number:
+      <input type="text" formControlName="houseNumber">
+    </label>
+
+    <label>
+      Postal Code:
+      <input type="text" formControlName="postalCode">
+    </label>
+
+    <label>
+      Country:
+      <input type="text" formControlName="country">
+    </label>
+  </div>
+
+  <div formGroupName="phoneNumber">
+    <label>
+      Phonenumber:
+      <input type="text" formControlName="number">
+    </label>
+
+    <label>
+      Country calling code:
+      <input type="text" formControlName="countryCallingCode">
+    </label>
+  </div>
+<button type="submit">submit</button>
+</form>

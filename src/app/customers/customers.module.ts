@@ -1,14 +1,21 @@
 import { NgModule } from '@angular/core';
+import { SharedModule } from '../shared/shared.module';
+
 import { CommonModule } from '@angular/common';
-import { OverviewComponent } from './overview/overview.component';
-import { DetailsComponent } from './details/details.component';
-import { EditComponent } from './edit/edit.component';
-import { NewComponent } from './new/new.component';
+import { CustomerdetailsComponent } from './customerdetails/customerdetails.component';
+import { CustomernewComponent } from './customernew/customernew.component';
+import { CustomeroverviewComponent } from './customeroverview/customeroverview.component';
+import { CustomereditComponent } from './customeredit/customeredit.component';
 
 @NgModule({
-  declarations: [OverviewComponent, DetailsComponent, EditComponent, NewComponent],
+  declarations: [
+    CustomerdetailsComponent, 
+    CustomernewComponent, 
+    CustomeroverviewComponent, CustomereditComponent
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ]
 })
 export class CustomersModule { }
