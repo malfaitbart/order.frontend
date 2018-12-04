@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { Customer } from '../../core/customer';
 import { CustomersService } from '../../core/customers.service';
 
+import { SearchfilterPipe } from '../../shared/searchfilter';
+
+
 @Component({
   selector: 'app-customeroverview',
   templateUrl: './customeroverview.component.html',

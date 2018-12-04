@@ -1,25 +1,37 @@
 <div>
   <table id="customersHeader">
     <tr>
-      <td width="60%"><h3>Customers</h3></td>
-      <td width="30%">filterbox</td>
+      <td width="60%">
+        <h3>Customers</h3>
+      </td>
+      <td width="30%">
+        filterbox:
+        <input #searchBox id="search-box" type="text" placeholder="Search customers" [(ngModel)]="lastName" />
+        <ul class="search-result">
+          <li *ngFor="let customer of customers | searchfilter: lastName">
+            <a routerLink="/customers/{{customer.id}}">
+              {{customer.lastName}}
+            </a>
+          </li>
+        </ul>
+      </td>
       <td width="10%"><a mat-raised-button color="primary" routerLink="/customers/new">Add A Customer</a></td>
     </tr>
   </table>
 </div>
 <div id="customers">
-    <table id="customertable">
-      <tr>
-        <th>ID</th>
-        <th>FirstName</th>
-        <th>LastName</th>      
-      </tr>
-      <tr *ngFor="let customer of customers" id="customer" width="100%">
-        <td width="25%">{{customer.id}}</td>
-        <td width="25%">{{customer.firstName}}</td>
-        <td width="25%">{{customer.lastName}}</td>
-        <td width="10%"><a routerLink="/customers/{{customer.id}}">View</a></td>
-        <td width="10%"><a routerLink="/customers/edit/{{customer.id}}">edit</a></td>
-      </tr>
-    </table>
-  </div>
+  <table id="customertable">
+    <tr>
+      <th>ID</th>
+      <th>FirstName</th>
+      <th>LastName</th>
+    </tr>
+    <tr *ngFor="let customer of customers" id="customer" width="100%">
+      <td width="25%">{{customer.id}}</td>
+      <td width="25%">{{customer.firstName}}</td>
+      <td width="25%">{{customer.lastName}}</td>
+      <td width="10%"><a routerLink="/customers/{{customer.id}}">View</a></td>
+      <td width="10%"><a routerLink="/customers/edit/{{customer.id}}">edit</a></td>
+    </tr>
+  </table>
+</div>

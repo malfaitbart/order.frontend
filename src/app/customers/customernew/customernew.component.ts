@@ -46,11 +46,13 @@ export class CustomernewComponent implements OnInit {
   ngOnInit() {
   }
   onSubmit(customer: Customer) {
+    let split = customer.email.complete.split("@");
     const editedCustomer: Customer = {
       ...customer,
       email: {
-        localPart: 'test',
-        domain: 'test',
+        
+        localPart: split[0],
+        domain: split[1],
         complete: customer.email.complete
       }
     }

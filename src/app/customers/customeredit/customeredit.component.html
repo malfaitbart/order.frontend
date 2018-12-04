@@ -1,3 +1,63 @@
-<p>
-  customeredit works!
-</p>
+<div id="updatecustomer" *ngIf="(customer$ | async) as customer else loading">
+  <h1>{{customer.firstName}} {{customer.lastName}}</h1>
+  <form [formGroup]="updateCustomer" (ngSubmit)="onSubmit(updateCustomer.value)">
+    <label>
+      First Name:
+      <input type="text" formControlName="firstName" value="{{customer.firstName}}">
+    </label><br />
+
+    <label>
+      Last Name:
+      <input type="text" formControlName="lastName" value="{{customer.lastName}}">
+    </label><br />
+    
+    <h3>Email</h3>
+    <p formGroupName="email">
+      <label>
+        E-Mail:
+        <input type="text" formControlName="complete" value="{{customer.email.complete}}">
+      </label>
+    </p>
+    
+    <h3>Address</h3>
+    <p formGroupName="address">
+      <label>
+        Street name:
+        <input type="text" formControlName="streetName" value="{{customer.address.streetName}}">
+      </label><br />
+
+      <label>
+        House number:
+        <input type="text" formControlName="houseNumber" value="{{customer.address.houseNumber}}">
+      </label><br />
+
+      <label>
+        Postal Code:
+        <input type="text" formControlName="postalCode" value="{{customer.address.postalCode}}">
+      </label><br />
+
+      <label>
+        Country:
+        <input type="text" formControlName="country" value="{{customer.address.country}}">
+      </label>
+    </p>
+    
+    <h3>Phone</h3>
+    <p formGroupName="phoneNumber">
+      <label>
+        Phonenumber:
+        <input type="text" formControlName="number" value="{{customer.phoneNumber.number}}">
+      </label><br />
+
+      <label>
+        Country calling code:
+        <input type="text" formControlName="countryCallingCode" value="{{customer.phoneNumber.countryCallingCode}}">
+      </label>
+    </p>
+    <!-- <button type="submit">update</button> -->
+  </form>
+
+  <ng-template #loading>
+    Loading...
+  </ng-template>
+  <button (click)="goBack()">go back</button>

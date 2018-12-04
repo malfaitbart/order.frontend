@@ -1,19 +1,16 @@
 <div id="itemdetail" *ngIf="(item$ | async) as item else loading">
   <h1>{{item.name}}</h1>
   <p>
-    Description: <br>
-    {{item.description}}  
+    Description: {{item.description}}  
   </p>
   <p>
-    <img src="../../../assets/big-smile.png">
+    Image: <img src="../../../assets/big-smile.png" width="250px">
   </p>
   <p>
-    Price: <br>
-    {{item.price}}
+    Price: {{item.price}}
   </p>
   <p>
-    Items in stock: <br>
-    {{item.amountOfStock}}
+    Items in stock: {{item.amountOfStock}}
   </p>
   <a routerLink="/items/edit/{{item.id}}">Edit</a>
 </div>

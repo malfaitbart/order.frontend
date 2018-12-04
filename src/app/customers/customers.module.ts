@@ -7,15 +7,19 @@ import { CustomernewComponent } from './customernew/customernew.component';
 import { CustomeroverviewComponent } from './customeroverview/customeroverview.component';
 import { CustomereditComponent } from './customeredit/customeredit.component';
 
+import { SearchfilterPipe } from '../shared/searchfilter';
+
 @NgModule({
   declarations: [
-    CustomerdetailsComponent, 
-    CustomernewComponent, 
-    CustomeroverviewComponent, CustomereditComponent
+    CustomerdetailsComponent,
+    CustomernewComponent,
+    CustomeroverviewComponent,
+    CustomereditComponent,
+    SearchfilterPipe,
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
   ]
 })
 export class CustomersModule { }
