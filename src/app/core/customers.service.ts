@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { Customer } from './customer';
+import { Customer, Email } from './customer';
 import { MatGridTileHeaderCssMatStyler } from '@angular/material';
 
 const httpOptions = {
@@ -19,7 +19,16 @@ export class CustomersService {
     private http: HttpClient
   ) { }
 
-  add(customer: Customer): Observable<Customer> {
+  toMailObject(emailComplete: string): Email {
+    let split = emailComplete.split("@");
+    return {
+      localPart: split[0],
+      domain: split[1],
+      complete: emailComplete
+    };
+  }
+
+  add(customer: Customer) {
     return this.http.post<Customer>(this.apiUrl, customer, httpOptions).pipe(
       tap((customer: Customer) => this.log(`added customer with name ${customer.firstName} ${customer.lastName}`)),
       catchError(this.handleError<Customer>('add'))

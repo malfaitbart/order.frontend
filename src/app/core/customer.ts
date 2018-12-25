@@ -2,11 +2,7 @@ export interface Customer{
 	id: string,
 	firstName: string,
 	lastName: string,
-	email: {
-	  localPart: string,
-	  domain: string,
-	  complete: string
-	},
+	email: Email,
 	address: {
 	  streetName: string,
 	  houseNumber: string,
@@ -17,4 +13,10 @@ export interface Customer{
 	  number: string,
 	  countryCallingCode: string
 	}
+}
+
+export interface Email {
+	localPart: string,
+	domain: string,
+	complete: string
 }

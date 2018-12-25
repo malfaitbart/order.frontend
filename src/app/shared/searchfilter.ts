@@ -7,7 +7,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class SearchfilterPipe implements PipeTransform {
 
   transform(items: any, term: any): any {
-    if (term === undefined) return;
+    if (term === undefined) {
+      return [];
+    }
 
     return items.filter(function(item) {
       for(let property in item){

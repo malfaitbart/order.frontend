@@ -46,15 +46,9 @@ export class CustomernewComponent implements OnInit {
   ngOnInit() {
   }
   onSubmit(customer: Customer) {
-    let split = customer.email.complete.split("@");
     const editedCustomer: Customer = {
       ...customer,
-      email: {
-        
-        localPart: split[0],
-        domain: split[1],
-        complete: customer.email.complete
-      }
+      email: this.customersService.toMailObject(customer.email.complete),
     }
     console.log(this.newCustomer.value);
     console.warn(this.newCustomer.value);
